@@ -57,9 +57,9 @@ def predict(cropped_imgs, model_file, traditional):
         tmp_images = tmp_images.reshape(tmp_images.shape[0], -1)
     else:
         tmp_images = np.repeat(tmp_images[..., np.newaxis], 3, -1)
-        if model_file == 'ResNet50PreprocessInput':
+        if model_file == 'ResNet50PreprocessInput.h5':
             tmp_images = resnet_preprocess_input(tmp_images)
-        elif model_file == 'VGG19':
+        elif model_file == 'VGG19.h5':
             tmp_images = vgg19_preprocess_input(tmp_images)
 
     if traditional:
@@ -91,7 +91,7 @@ def show_output(cropped_imgs, predictions):
 
 if __name__ == '__main__':
     path = input("Enter Image Path: ")
-    models = [['Resnet50PreprocessInput', False], ['VGG19', False], ['RandomForest.pkl', True], ['SVM.pkl', True]]
+    models = [['ResNet50PreprocessInput.h5', False], ['VGG19.h5', False], ['RandomForest.pkl', True], ['SVM.pkl', True]]
     while True:
         print("Select the model you want to use for prediction: ")
         print("1. Resnet50")
