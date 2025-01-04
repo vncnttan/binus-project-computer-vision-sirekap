@@ -16,3 +16,11 @@ The dataset consists of images of ballot sheet from each TPS taken from 2024 pre
 For our purposes, we created manual_ans.csv for the label of test images with the same format of label.csv for ballot images in the test folder (from TPS_501.jpg to TPS_700.jpg). This label will be purposeful for evaluating loss and accuracy from the test images. The train dataset will be further split into train set and validation set. 
 
 ### File Description
+- `rotating-image.ipynb`: Rotating various rotated images to align to the same direction using OpenCV detecting circle method.
+- `cropping-with-roboflow.ipynb`: Crop image to 9 images of dotted circle using Roboflow YOLO model inference API
+- `resnet.ipynb`: Model Training using ResNet50
+- `vgg.ipynb`: Model Training using VGG19
+- `svm.ipynb`: Model Training using SVM
+- `random-forest.ipynb`: Model Training using RFC (Random Forest Classifier)
+- `comparison.ipynb`: View Model Performance Evaluation for each model on the test images
+- `inference.ipynb`: Use model to predict ballot count for each candidate based on the uploaded image
